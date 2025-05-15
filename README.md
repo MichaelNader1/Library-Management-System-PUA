@@ -83,4 +83,12 @@ The system uses **ASP.NET Core Identity** with **Cookie-based Authentication**.
 
 ---
 
+---
+
+🔒 **Copyright © 2025  
+Michael Nader**  
+Software Engineering 
+Department of Information Technology
+PUA - Alexandria, Egypt 🇪🇬
+
 
