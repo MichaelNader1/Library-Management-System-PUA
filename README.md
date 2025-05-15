@@ -83,11 +83,4 @@ The system uses **ASP.NET Core Identity** with **Cookie-based Authentication**.
 
 ---
 
-🧑‍💻 Developed ب
-Pharos University Software Engineering Team
-Department of Information Technology
-PUA - Alexandria, Egypt 🇪🇬
-
-
-
 
