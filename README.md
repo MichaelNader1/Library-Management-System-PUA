@@ -1,38 +1,53 @@
 # 📚 Library Management System API - Pharos University (PUA)
 
+## 📌 About the Project
+
+This project was developed for **Pharos University** to serve as a complete website solution.
+It is currently **active** and **in use** by the university staff and students, providing real, functional services within the university environment.
+
 A powerful and flexible RESTful API built with ASP.NET Core for managing libraries, users, and books across multiple branches of **Pharos University in Alexandria (PUA)**. This project serves as the backend infrastructure for a multi-library management platform that handles book circulation, copying, reading, borrowing, penalties, banning, transferring, discarding, and more.
 
 ---
 
-## 🚀 Features
+## 🚀 Technologies Used
 
-- 🔐 **JWT Authentication** and Role-based Authorization (Admin only access to user management)
-- 📦 **Book Inventory Management** across multiple libraries
-- 📖 **Borrowing, Reading, and Copying** workflows
-- 🛑 **Penalty System** with automated banning logic
-- ♻️ **Book Discarding and Transfer** between libraries
-- 📊 **Logging System** for tracking all critical data changes
-- 🔁 **Unit of Work** and **Generic Repository Pattern** for clean, testable architecture
-- 📡 **Linked Server** structure compatible with SQL Server and multiple campuses
-
----
-
-## 🛠️ Tech Stack
-
-- **Backend Framework:** ASP.NET Core Web API (.NET 6+)
-- **Database:** SQL Server
-- **ORM:** Entity Framework Core
-- **Authentication:** ASP.NET Identity + JWT Bearer Tokens
-- **Architecture:** Clean Architecture with Repository & Unit of Work
-- **Dependency Injection:** Built-in ASP.NET Core DI
-- **Documentation:** Swagger/OpenAPI
+- ASP.NET Core Web API (.NET 6)
+- Entity Framework Core (Code-First)
+- SQL Server
+- ASP.NET Identity with Cookie-based Authentication
+- LINQ & EF Includes
+- Repository Pattern + Unit of Work Pattern
+- Swagger (API documentation)
+- CORS Policy (for security)
 
 ---
 
-## 🔐 Roles and Access
+## ✨ Features
 
-- `Admin`: Full control over users, libraries, and book management.
-- `User`: Limited to borrowing, reading, and copying books from their assigned library.
+- 🏛 Multi-Library Structure (Each admin manages one library)
+- 📖 Book Borrowing, Reading, Copying & Transferring between libraries
+- ❌ Discarding books with reason tracking
+- ⏱ Penalty System for late returns (automatic ban if exceeded)
+- 🔐 Cookie-based Authentication with Role-based Authorization
+- 📊 Logging of all Add/Update/Delete operations
+- 👨‍🏫 Admin-exclusive user management (add, edit, delete, assign to library)
+- 📎 Soft validations (ex: prevent borrowing locked or unavailable books)
+- 📑 RESTful API with clean structure and navigation properties
+- 🧪 Fully testable with Swagger UI
+
+---
+
+## 🔐 Authentication
+
+The system uses **ASP.NET Core Identity** with **Cookie-based Authentication**.
+
+- Admins authenticate via login using cookies (no public registration).
+- Admins can:
+  - Register new users
+  - Assign users to libraries
+  - Edit user roles or libraries
+  - Delete users
+- Role checking is handled using `UserManager.GetRolesAsync(user)`.
 
 ---
 
@@ -68,9 +83,11 @@ A powerful and flexible RESTful API built with ASP.NET Core for managing librari
 
 ---
 
-## ✅ Prerequisites
+🧑‍💻 Developed ب
+Pharos University Software Engineering Team
+Department of Information Technology
+PUA - Alexandria, Egypt 🇪🇬
 
-- [.NET SDK](https://dotnet.microsoft.com/download) (v6 or higher)
-- [SQL Server](https://www.microsoft.com/en-us/sql-server)
-- Visual Studio / VS Code
+
+
 
