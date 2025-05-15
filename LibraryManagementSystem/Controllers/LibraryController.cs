@@ -72,16 +72,20 @@ public class LibraryController : ControllerBase
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, [FromBody] Library library)
     {
-        if (id != library.LibraryID) return BadRequest("ID mismatch");
+        if (id != library.LibraryID)
+            return BadRequest("ID mismatch");
 
         var existingLibrary = await _unitOfWork.Repository<Library>().GetByIdAsync(id);
-        if (existingLibrary == null) return NotFound("Library not found");
+        if (existingLibrary == null)
+            return NotFound("Library not found");
 
-        _unitOfWork.Repository<Library>().Update(library);
+        existingLibrary.Name = library.Name;
+
+        _unitOfWork.Repository<Library>().Update(existingLibrary);
         await _unitOfWork.SaveAsync();
-        return Ok(library);
-    }
 
+        return Ok(existingLibrary);
+    }
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
